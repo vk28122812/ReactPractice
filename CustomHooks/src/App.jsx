@@ -40,9 +40,12 @@ function App() {
         prevPickedPlaces = [];
       }
       if (prevPickedPlaces.some((place) => place.id === selectedPlace.id)) {
+        console.log(prevPickedPlaces)
         return prevPickedPlaces;
+      }else{
+        console.log([selectedPlace, ...prevPickedPlaces])
+        return [selectedPlace, ...prevPickedPlaces];
       }
-      return [selectedPlace, ...prevPickedPlaces];
     });
 
     try {
